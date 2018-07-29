@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2018-06-12</Date>
+  <Beta>True</Beta>
+  <Category>Cloud:</Category>
+  <Name>RadioCast</Name>
+  <Project>https://github.com/ozymandias-cast/radiocast</Project>
+  <Changes>
+- First working commit
+  </Changes>
+  <Overview>
+    RadioCast is an application that downloads and streams podcasts, mimicking an old-style radio station.
+  </Overview>
+  <Description>
+    RadioCast is an application that downloads and streams podcasts, mimicking an old-style radio station.
+  </Description>
+  <Registry>None</Registry>
+  <GitHub>https://github.com/ozymandias-cast/radiocast</GitHub>
+  <Repository>ozymandias-cast/radiocast</Repository>
+  <Support>https://github.com/ozymandias-cast/radiocast</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>4444</HostPort>
+        <ContainerPort>4444</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/podcasts</HostDir>
+      <ContainerDir>/podcasts</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:4444]/</WebUI>
+  <Icon>http://d2631fvi2jdnb6.cloudfront.net/docker/limetech/sync.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="HTTP Stream Output" Target="4444" Default="4444" Mode="tcp" Display="always-hide" Required="true"
+       Description="Point your VLC to this ip:port.">4444</Config>
+
+  <Config Type="Path" Name="Podcast Path" Target="/podcasts" Default="/podcasts" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where radiocast will read the podcasts XML (Downcast.opml) and store the podcasts.">/mnt/user/appdata/Sync</Config>
+</Container>
