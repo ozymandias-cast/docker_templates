@@ -16,7 +16,7 @@
   </Description>
   <Registry>https://hub.docker.com/r/nickbelanepics/radiocast/</Registry>
   <GitHub>https://github.com/ozymandias-cast/radiocast</GitHub>
-  <Repository>ozymandias-cast/radiocast</Repository>
+  <Repository>nickbelanepics/radiocast</Repository>
   <Support>https://github.com/ozymandias-cast/radiocast</Support>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
