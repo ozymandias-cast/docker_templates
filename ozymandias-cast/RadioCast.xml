@@ -9,10 +9,10 @@
 - First working commit
   </Changes>
   <Overview>
-    RadioCast is an application that downloads and streams podcasts, mimicking an old-style radio station.
+    RadioCast is an application that downloads and streams podcasts creating a radio-like experience.
   </Overview>
   <Description>
-    RadioCast is an application that downloads and streams podcasts, mimicking an old-style radio station.
+    RadioCast is an application that downloads and streams podcasts creating a radio-like experience.
   </Description>
   <Registry>https://hub.docker.com/r/nickbelanepics/radiocast/</Registry>
   <GitHub>https://github.com/ozymandias-cast/radiocast</GitHub>
@@ -29,6 +29,16 @@
         <ContainerPort>4444</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
+      <Port>
+        <HostPort>4445</HostPort>
+        <ContainerPort>4445</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>4446</HostPort>
+        <ContainerPort>4446</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
     </Publish>
   </Networking>
   <Data>
@@ -38,13 +48,19 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:4444]/</WebUI>
+  <WebUI>http://[IP]:[PORT:4444,4445,4446]/</WebUI>
   <Icon>https://cdn.pixabay.com/photo/2016/04/11/14/59/podcast-icon-1322239_1280.png</Icon>
 
   <Network Default="bridge">bridge</Network>
 
   <Config Type="Port" Name="HTTP Stream Output" Target="4444" Default="4444" Mode="tcp" Display="advanced-hide" Required="true"
-       Description="Point your VLC to this ip:port.">4444</Config>
+       Description="Point your VLC to this ip:port for gaming category.">4444</Config>
+
+  <Config Type="Port" Name="HTTP Stream Output" Target="4445" Default="4445" Mode="tcp" Display="advanced-hide" Required="true"
+       Description="Point your VLC to this ip:port for movies category.">4445</Config>
+  
+  <Config Type="Port" Name="HTTP Stream Output" Target="4446" Default="4446" Mode="tcp" Display="advanced-hide" Required="true"
+       Description="Point your VLC to this ip:port for various category.">4446</Config>
 
   <Config Type="Path" Name="Podcast Path" Target="/podcasts" Default="/podcasts" Mode="rw" Display="advanced-hide" Required="true"
        Description="This is where radiocast will read the podcasts XML (Downcast.opml) and store the podcasts.">/mnt/user/appdata/Sync</Config>
