@@ -14,7 +14,7 @@
   <Description>
     RadioCast is an application that downloads and streams podcasts, mimicking an old-style radio station.
   </Description>
-  <Registry>None</Registry>
+  <Registry>https://hub.docker.com/r/nickbelanepics/radiocast/</Registry>
   <GitHub>https://github.com/ozymandias-cast/radiocast</GitHub>
   <Repository>ozymandias-cast/radiocast</Repository>
   <Support>https://github.com/ozymandias-cast/radiocast</Support>
@@ -39,11 +39,11 @@
     </Volume>
   </Data>
   <WebUI>http://[IP]:[PORT:4444]/</WebUI>
-  <Icon>http://d2631fvi2jdnb6.cloudfront.net/docker/limetech/sync.png</Icon>
+  <Icon>https://cdn.pixabay.com/photo/2016/04/11/14/59/podcast-icon-1322239_1280.png</Icon>
 
   <Network Default="bridge">bridge</Network>
 
-  <Config Type="Port" Name="HTTP Stream Output" Target="4444" Default="4444" Mode="tcp" Display="always-hide" Required="true"
+  <Config Type="Port" Name="HTTP Stream Output" Target="4444" Default="4444" Mode="tcp" Display="advanced-hide" Required="true"
        Description="Point your VLC to this ip:port.">4444</Config>
 
   <Config Type="Path" Name="Podcast Path" Target="/podcasts" Default="/podcasts" Mode="rw" Display="advanced-hide" Required="true"
