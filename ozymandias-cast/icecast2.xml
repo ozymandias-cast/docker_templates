@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2018-06-12</Date>
+  <Beta>True</Beta>
+  <Category>Cloud:</Category>
+  <Name>icecast2</Name>
+  <Project>http://icecast.org</Project>
+  <Changes>
+- Template for UNRAID
+  </Changes>
+  <Overview>
+  Icecast is a streaming media (audio/video) server which currently supports Ogg (Vorbis and Theora), Opus, WebM and MP3 streams.
+  </Overview>
+  <Description>
+  Icecast is a streaming media (audio/video) server which currently supports Ogg (Vorbis and Theora), Opus, WebM and MP3 streams.
+  </Description>
+  <Registry>https://hub.docker.com/r/moul/icecast/</Registry>
+  <GitHub>https://github.com/moul/docker-icecast</GitHub>
+  <Repository>moul/icecast</Repository>
+  <Support>https://hub.docker.com/r/moul/icecast/</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  
+  <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+  <Icon>https://gitlab.xiph.org/uploads/-/system/project/avatar/2/240px-Icecast-Logo-Alternative.svg.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Web UI" Target="8000" Default="8000" Mode="tcp" Display="advanced-hide" Required="true"
+       Description="IceCast WebUI">4444</Config>
+
+  </Container>
