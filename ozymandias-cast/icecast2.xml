@@ -37,7 +37,5 @@
 
   <Network Default="bridge">bridge</Network>
 
-  <Config Type="Port" Name="Web UI" Target="8000" Default="8000" Mode="tcp" Display="advanced-hide" Required="true"
-       Description="IceCast WebUI">8000</Config>
 
   </Container>
