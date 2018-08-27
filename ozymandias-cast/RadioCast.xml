@@ -7,6 +7,7 @@
   <Project>https://github.com/ozymandias-cast/radiocast</Project>
   <Changes>
 - First working commit
+- Addedd CTRL interface
   </Changes>
   <Overview>
     RadioCast is an application that downloads and streams podcasts creating a radio-like experience.
@@ -24,6 +25,11 @@
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
+      <Port>
+        <HostPort>4443</HostPort>
+        <ContainerPort>4443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
       <Port>
         <HostPort>4444</HostPort>
         <ContainerPort>4444</ContainerPort>
@@ -48,11 +54,12 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:4444,4445,4446]/</WebUI>
+  <WebUI>http://[IP]:[PORT:4443,4444,4445,4446]/</WebUI>
   <Icon>https://cdn.pixabay.com/photo/2016/04/11/14/59/podcast-icon-1322239_1280.png</Icon>
 
   <Network Default="bridge">bridge</Network>
-
+  <Config Type="Port" Name="CTRL Port" Target="4443" Default="4443" Mode="tcp" Display="advanced-hide" Required="true"
+       Description="CTRL port for RadioCast">4443</Config>
   <Config Type="Port" Name="HTTP Stream Output" Target="4444" Default="4444" Mode="tcp" Display="advanced-hide" Required="true"
        Description="Point your VLC to this ip:port for gaming category.">4444</Config>
 
